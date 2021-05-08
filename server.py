@@ -25,14 +25,22 @@ def plot():
         "defi_prop": int(request.args.get("defi_prop")),
         "defi_return": int(request.args.get("defi_return")),
         "fund_return": int(request.args.get("fund_return")),
-        "growth_model": request.args.get("growth_model")
+        "initial_number_user": int(request.args.get("initial_number_user")),
+        "final_number_user": int(request.args.get("final_number_user")),
+        "avg_nb_transactions": int(request.args.get("avg_nb_transactions")),
+        "avg_amount_transaction": int(request.args.get("avg_amount_transaction")),
+        "time": int(request.args.get("time")),
+        "tau": int(request.args.get("tau")),
+        "defi_redistrib_period": int(request.args.get("defi_redistrib_period")),
+        "fund_period": int(request.args.get("fund_period"))
     }
+    print(params)
     return str(plotter.plot(params
-                                 ))
+                            ))
 
 # Display the plot
 
 
-@app.route('/plot.html')
-def display_plot():
-    return render_template("plot.html")
+@app.route('/plot<id>.html')
+def display_plot(id):
+    return render_template(f"plot{id}.html")
