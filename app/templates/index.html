@@ -116,7 +116,7 @@
         <div class="plot-container">
           <label for="transaction_fee"> Transaction fee</label><br />
           <input
-            id="daily_value"
+            id="transaction_fee"
             class="slider"
             type="range"
             min="1"
@@ -132,6 +132,29 @@
             max="100"
             value="50"
           />
+          <label for="defi_return"> Defi. return </label><br />
+          <input
+            id="defi_return"
+            class="slider"
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+          />
+          <label for="fund_return"> Fund return </label><br />
+          <input
+            id="fund_return"
+            class="slider"
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+          />
+          <label for="growth_model">Growth Model</label>
+          <select name="growth_model" id="growth_model">
+            <option value="linear">Linear</option>
+            <option value="sigmoid">Sigmoid</option>
+          </select>
         </div>
         <hr />
         <button onclick="query()" id="submit">Simulate</button>

@@ -42,7 +42,14 @@
 }
 
 button {
-  border:none;
+  border: none;
   border-radius: 25px;
-  padding:10px 20px;
+  padding: 10px 20px;
+}
+
+select {
+    -webkit-appearance: none;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
 }
