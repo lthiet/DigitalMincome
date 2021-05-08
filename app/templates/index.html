@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>W3.CSS Template</title>
+  <title>Digital Mincome</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -8,6 +8,15 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Poppins"
   />
+  <link
+    rel="stylesheet"
+    href="{{url_for('static',filename='css/style.css')}}"
+  />
+  <script
+    src="{{ url_for('static', filename='js/index.js') }}"
+    type="text/javascript"
+    defer
+  ></script>
   <style>
     body,
     h1,
@@ -30,6 +39,7 @@
       opacity: 1;
     }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
     <!-- Sidebar/menu -->
     <nav
@@ -98,14 +108,34 @@
       <div class="w3-container" style="margin-top: 80px" id="showcase">
         <h1 class="w3-jumbo"><b>Digital Mincome</b></h1>
         <h1 class="w3-xxxlarge w3-text-indigo"><b>Model.</b></h1>
-        <hr
+        <!-- <hr
           style="width: 300px; border: 5px solid darkseagreen"
           class="w3-round"
-        />
+        /> -->
 
-        <div class="iframe-container">
-          <iframe src="plot.html" frameborder="0" width="100%" height="1000"></iframe>
+        <div class="plot-container">
+          <label for="transaction_fee"> Transaction fee</label><br />
+          <input
+            id="daily_value"
+            class="slider"
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+          />
+          <label for="defi_prop"> Defi. prop. </label><br />
+          <input
+            id="defi_prop"
+            class="slider"
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+          />
         </div>
+        <hr />
+        <button onclick="query()" id="submit">Simulate</button>
+        <div id="result"></div>
       </div>
 
       <!-- End page content -->
