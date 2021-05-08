@@ -36,5 +36,5 @@ ax.set_ylabel('y')
 ax.set_title('Interactive legend', size=20)
 
 # mpld3.show()
-with open('truc.html','w') as f:
+with open('html/plot.html','w') as f:
     mpld3.save_html(fig,f)
