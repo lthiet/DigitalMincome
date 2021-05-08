@@ -1,67 +1,70 @@
-""" import plotly.express as px
-import os
-
-cwd = os.getcwd()
-plot_html_path = os.path.join(os.path.dirname(cwd),'DigitalMincome/app/plot.html')
-
-df = px.data.gapminder()
-fig = px.scatter(df, x="gdpPercap", y="lifeExp", animation_frame="year", animation_group="country",
-           size="pop", color="continent", hover_name="country",
-           log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])
-
-fig["layout"].pop("updatemenus") # optional, drop animation buttons
-fig.write_html(plot_html_path) """
-
 import plotly.graph_objects as go
-import numpy as np
-import os
 
 # Create figure
 fig = go.Figure()
 
+# Range for each variable
+range_daily_volume = range(20)
+range_fee_percentage = range(100)
+range_yield_percentage = range(40)
+
 # Add traces, one for each slider step
-for step in np.arange(0, 5, 0.1):
+for step in range_daily_volume:
     fig.add_trace(
         go.Scatter(
             visible=False,
-            line=dict(color="#00CED1", width=6),
-            name="𝜈 = " + str(step),
-            x=np.arange(0, 10, 0.01),
-            y=np.sin(step * np.arange(0, 10, 0.01))))
+            x=[0],
+            y=[0],
+            mode="markers",
+            marker_size=[step*10]))
 
-# Make 10th trace visible
-fig.data[10].visible = True
+# Create a trace for each variable
+# add_traces(range_daily_volume)
+# add_traces(range_fee_percentage)
+# add_traces(range_yield_percentage)
+fig.data[-1].visible = True
 
-# Create and add slider
-steps = []
-for i in range(len(fig.data)):
-    step = dict(
-        method="update",
-        args=[{"visible": [False] * len(fig.data)},
-              {"title": "Slider switched to step: " + str(i)}],  # layout attribute
-    )
-    step["args"][0]["visible"][i] = True  # Toggle i'th trace to "visible"
-    steps.append(step)
+
+def create_steps(ranges):
+    """
+    Create steps
+    """
+    steps = []
+    for i in range(len(ranges)):
+        step = dict(
+            method="update",
+            args=[{"visible": [False] * len(ranges)},
+                  {"title": "Slider switched to step: " + str(i)}],  # layout attribute
+        )
+        step["args"][0]["visible"][i] = True  # Toggle i'th trace to "visible"
+        steps.append(step)
+    return steps
+
 
 sliders = [dict(
     active=10,
-    currentvalue={"prefix": "Frequency: "},
+    currentvalue={"prefix": "Daily volume"},
     pad={"t": 50},
-    steps=steps
-)]
+    steps=create_steps(range_daily_volume)
+)
+ ]
+#  dict(
+#     active=10,
+#     currentvalue={"prefix": "Fee percentage"},
+#     pad={"t": 150},
+#     steps=create_steps(range(100))
+# ), dict(
+#     active=10,
+#     currentvalue={"prefix": "Yield percentage"},
+#     pad={"t": 250},
+#     steps=create_steps(range(50))
+# )]
 
 fig.update_layout(
     sliders=sliders
 )
 
 
+plot_html_path = 'app/plot.html'
 
-cwd = os.getcwd()
-plot_html_path = os.path.join(os.path.dirname(cwd),'DigitalMincome/app/plot.html')
-
-fig.write_html(plot_html_path) 
-
-
-
-
-
+fig.write_html(plot_html_path)
