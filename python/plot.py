@@ -1,40 +1,15 @@
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-import mpld3
-from mpld3 import plugins
-np.random.seed(9615)
+import plotly.express as px
+import os
 
-# generate df
-N = 100
-df = pd.DataFrame((.1 * (np.random.random((N, 5)) - .5)).cumsum(0),
-                  columns=['a', 'b', 'c', 'd', 'e'],)
+cwd = os.getcwd()
+plot_html_path = os.path.join(os.path.dirname(cwd),'DigitalMincome/app/plot.html')
 
-# plot line + confidence interval
-fig, ax = plt.subplots()
-ax.grid(True, alpha=0.3)
 
-for key, val in df.iteritems():
-    l, = ax.plot(val.index, val.values, label=key)
-    ax.fill_between(val.index,
-                    val.values * .5, val.values * 1.5,
-                    color=l.get_color(), alpha=.4)
 
-# define interactive legend
+df = px.data.gapminder()
+fig = px.scatter(df, x="gdpPercap", y="lifeExp", animation_frame="year", animation_group="country",
+           size="pop", color="continent", hover_name="country",
+           log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])
 
-handles, labels = ax.get_legend_handles_labels() # return lines and labels
-interactive_legend = plugins.InteractiveLegendPlugin(zip(handles,
-                                                         ax.collections),
-                                                     labels,
-                                                     alpha_unsel=0.5,
-                                                     alpha_over=1.5, 
-                                                     start_visible=True)
-plugins.connect(fig, interactive_legend)
-
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_title('Interactive legend', size=20)
-
-# mpld3.show()
-with open('html/plot.html','w') as f:
-    mpld3.save_html(fig,f)
+fig["layout"].pop("updatemenus") # optional, drop animation buttons
+fig.write_html(plot_html_path)
