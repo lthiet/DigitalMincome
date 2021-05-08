@@ -1,18 +1,12 @@
 
-import flask
-from flask_bootstrap import Bootstrap
 from flask import Flask
 from flask import render_template
-from flask import request
-from flask import send_file
-from flask import jsonify
 from services import plotter
 
 app = Flask(__name__,
             template_folder='app/templates',
             static_folder='app/static')
 app.config['SECRET_KEY'] = 'DigitalMincome'
-bootstrap = Bootstrap(app)
 
 
 @app.route('/')
