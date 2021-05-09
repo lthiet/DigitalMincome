@@ -1,9 +1,9 @@
 .plot-container {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  flex-direction: row;
   /* background-color: blue; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .slider {
@@ -56,4 +56,14 @@ select {
 
 svg {
   width: 100%;
+}
+
+.left {
+  width:50%;
+  float:left
+}
+
+.right {
+  width:50%;
+  float:right
 }

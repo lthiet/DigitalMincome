@@ -130,6 +130,8 @@ def plot(params):
     ax.stackplot(periode[:-2], UBI_per_user_defi[:-1],
                   UBI_per_user_fund[:-1], labels=['Defi', 'Fund'])
     ax.legend(loc='upper left')
+    ax.set_xlabel("Time")
+    ax.set_ylabel("UBI / User")
 
 
     plot_name = f"plot{uuid.uuid4()}.html"

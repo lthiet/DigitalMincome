@@ -121,7 +121,8 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>0.01</output>
-            <label for="defi_prop"> Defi. prop. </label><br />
+            <br/>
+            <label for="defi_prop"> DeFi proportion </label><br />
             <input
               id="defi_prop"
               class="slider"
@@ -133,7 +134,8 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>0.5</output>
-            <label for="defi_return"> Defi. return </label><br />
+            <br/>
+            <label for="defi_return"> DeFi return </label><br />
             <input
               id="defi_return"
               class="slider"
@@ -145,6 +147,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>0.07</output>
+            <br/>
             <label for="fund_return"> Fund return </label><br />
             <input
               id="fund_return"
@@ -158,6 +161,7 @@
             />
 
             <output>0.15</output>
+            <br/>
             <label for="initial_number_user"> Initial number of users </label
             ><br />
             <input
@@ -165,13 +169,14 @@
               class="slider"
               type="range"
               min="1000"
-              max="100000"
+              max="1000000"
               value="300000"
               step="1000"
               oninput="this.nextElementSibling.value = this.value"
             />
 
             <output>300000</output>
+            <br/>
             <label for="final_number_user"> Final number of users </label><br />
             <input
               id="final_number_user"
@@ -183,6 +188,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>30000000</output>
+            <br/>
             <label for="avg_nb_transactions">
               Average number of transaction </label
             ><br />
@@ -197,6 +203,7 @@
             />
 
             <output>2</output>
+            <br/>
             <label for="avg_amount_transaction">
               Average transaction amount </label
             ><br />
@@ -210,6 +217,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>100</output>
+            <br/>
             <label for="time"> Time Span (in years) </label><br />
             <input
               id="time"
@@ -222,7 +230,8 @@
             />
 
             <output>12</output>
-            <label for="tau">Linearity</label><br />
+            <br/>
+            <label for="tau">Linearity of customer growth</label><br />
             <input
               id="tau"
               class="slider"
@@ -234,6 +243,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>2.5</output>
+            <br/>
             <label for="defi_redistrib_period"
               >Defi. redistribution period (in days)</label
             ><br />
@@ -247,7 +257,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>92</output>
-            <br>
+            <br/>
             <button onclick="query()" id="submit">Simulate</button>
           </div>
           <div id="result" class="right"></div>
