@@ -71,6 +71,13 @@
           class="w3-bar-item w3-button w3-hover-white"
           >Model</a
         >
+
+        <a
+          href="#video"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Video</a
+        >
       </div>
     </nav>
 
@@ -99,7 +106,7 @@
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left: 340px; margin-right: 40px">
       <!-- Header -->
-      <div class="w3-container" style="margin-top: 80px" id="showcase">
+      <div class="w3-container" style="margin-top: 80px" id="model">
         <h1 class="w3-jumbo"><b>Digital Mincome</b></h1>
         <h1 class="w3-xxxlarge w3-text-indigo"><b>Model.</b></h1>
         <!-- <hr
@@ -121,7 +128,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>0.01</output>
-            <br/>
+            <br />
             <label for="defi_prop"> DeFi proportion </label><br />
             <input
               id="defi_prop"
@@ -134,7 +141,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>0.5</output>
-            <br/>
+            <br />
             <label for="defi_return"> DeFi return </label><br />
             <input
               id="defi_return"
@@ -147,7 +154,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>0.07</output>
-            <br/>
+            <br />
             <label for="fund_return"> Fund return </label><br />
             <input
               id="fund_return"
@@ -161,7 +168,7 @@
             />
 
             <output>0.15</output>
-            <br/>
+            <br />
             <label for="initial_number_user"> Initial number of users </label
             ><br />
             <input
@@ -176,7 +183,7 @@
             />
 
             <output>300000</output>
-            <br/>
+            <br />
             <label for="final_number_user"> Final number of users </label><br />
             <input
               id="final_number_user"
@@ -188,7 +195,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>30000000</output>
-            <br/>
+            <br />
             <label for="avg_nb_transactions">
               Average number of transaction </label
             ><br />
@@ -203,7 +210,7 @@
             />
 
             <output>2</output>
-            <br/>
+            <br />
             <label for="avg_amount_transaction">
               Average transaction amount </label
             ><br />
@@ -217,7 +224,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>100</output>
-            <br/>
+            <br />
             <label for="time"> Time Span (in years) </label><br />
             <input
               id="time"
@@ -230,7 +237,7 @@
             />
 
             <output>12</output>
-            <br/>
+            <br />
             <label for="tau">Linearity of customer growth</label><br />
             <input
               id="tau"
@@ -243,7 +250,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>2.5</output>
-            <br/>
+            <br />
             <label for="defi_redistrib_period"
               >Defi. redistribution period (in days)</label
             ><br />
@@ -257,7 +264,7 @@
               oninput="this.nextElementSibling.value = this.value"
             />
             <output>92</output>
-            <br/>
+            <br />
             <button onclick="query()" id="submit">Simulate</button>
           </div>
           <div id="result" class="right"></div>
@@ -272,6 +279,16 @@
           /> -->
         </div>
         <hr />
+      </div>
+
+      <div class="w3-container" style="margin-top: 80px" id="video">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Video</b></h1>
+        <iframe
+          src="https://www.youtube.com/embed/tgbNymZ7vqY"
+          frameborder="0"
+          width=1920
+          height="1080"
+        ></iframe>
       </div>
 
       <!-- End page content -->
