@@ -15,22 +15,19 @@ app.config['SECRET_KEY'] = 'DigitalMincome'
 def root():
     return render_template("index.html")
 
-# Request to make plot
-
-
 @app.route('/plot')
 def plot():
     params = {
-        "transaction_fee": int(request.args.get("transaction_fee")),
-        "defi_prop": int(request.args.get("defi_prop")),
-        "defi_return": int(request.args.get("defi_return")),
-        "fund_return": int(request.args.get("fund_return")),
+        "transaction_fee": float(request.args.get("transaction_fee")),
+        "defi_prop": float(request.args.get("defi_prop")),
+        "defi_return": float(request.args.get("defi_return")),
+        "fund_return": float(request.args.get("fund_return")),
         "initial_number_user": int(request.args.get("initial_number_user")),
         "final_number_user": int(request.args.get("final_number_user")),
         "avg_nb_transactions": int(request.args.get("avg_nb_transactions")),
         "avg_amount_transaction": int(request.args.get("avg_amount_transaction")),
         "time": int(request.args.get("time")),
-        "tau": int(request.args.get("tau")),
+        "tau": float(request.args.get("tau")),
         "defi_redistrib_period": int(request.args.get("defi_redistrib_period")),
         "fund_period": int(request.args.get("fund_period"))
     }

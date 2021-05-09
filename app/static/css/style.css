@@ -28,14 +28,14 @@
   width: 25px;
   height: 25px;
   border-radius: 25px;
-  background: darkseagreen;
+  background: #3f51b5;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: darkseagreen;
+  background: #3f51b5;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -48,8 +48,12 @@ button {
 }
 
 select {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
   border: none;
   border-radius: 25px;
   padding: 10px 20px;
+}
+
+svg {
+  width: 100%;
 }

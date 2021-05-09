@@ -71,12 +71,6 @@
           class="w3-bar-item w3-button w3-hover-white"
           >Model</a
         >
-        <a
-          href="#visualization"
-          onclick="w3_close()"
-          class="w3-bar-item w3-button w3-hover-white"
-          >Visualization</a
-        >
       </div>
     </nav>
 
@@ -114,131 +108,160 @@
         /> -->
 
         <div class="plot-container">
-          <label for="transaction_fee"> Transaction fee</label><br />
-          <input
-            id="transaction_fee"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
-          <label for="defi_prop"> Defi. prop. </label><br />
-          <input
-            id="defi_prop"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
-          <label for="defi_return"> Defi. return </label><br />
-          <input
-            id="defi_return"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
-          <label for="fund_return"> Fund return </label><br />
-          <input
-            id="fund_return"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
+          <div class="left">
+            <label for="transaction_fee"> Transaction fee</label><br />
+            <input
+              id="transaction_fee"
+              class="slider"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.01"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output>0.01</output>
+            <label for="defi_prop"> Defi. prop. </label><br />
+            <input
+              id="defi_prop"
+              class="slider"
+              type="range"
+              min="0"
+              max="1"
+              value="0.5"
+              step="0.01"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output>0.5</output>
+            <label for="defi_return"> Defi. return </label><br />
+            <input
+              id="defi_return"
+              class="slider"
+              type="range"
+              min="0"
+              max="1"
+              value="0.07"
+              step="0.01"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output>0.07</output>
+            <label for="fund_return"> Fund return </label><br />
+            <input
+              id="fund_return"
+              class="slider"
+              type="range"
+              min="0"
+              max="1"
+              value="0.15"
+              step="0.01"
+              oninput="this.nextElementSibling.value = this.value"
+            />
 
-          <label for="initial_number_user"> Initial number of users </label
-          ><br />
-          <input
-            id="initial_number_user"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
+            <output>0.15</output>
+            <label for="initial_number_user"> Initial number of users </label
+            ><br />
+            <input
+              id="initial_number_user"
+              class="slider"
+              type="range"
+              min="1000"
+              max="100000"
+              value="300000"
+              step="1000"
+              oninput="this.nextElementSibling.value = this.value"
+            />
 
-          <label for="final_number_user"> Final number of users </label><br />
-          <input
-            id="final_number_user"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
-          <label for="avg_nb_transactions">
-            Average number of transaction </label
-          ><br />
-          <input
-            id="avg_nb_transactions"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
+            <output>300000</output>
+            <label for="final_number_user"> Final number of users </label><br />
+            <input
+              id="final_number_user"
+              class="slider"
+              type="range"
+              min="100000"
+              max="10000000"
+              value="100000"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output>30000000</output>
+            <label for="avg_nb_transactions">
+              Average number of transaction </label
+            ><br />
+            <input
+              id="avg_nb_transactions"
+              class="slider"
+              type="range"
+              min="1"
+              max="50"
+              value="2"
+              oninput="this.nextElementSibling.value = this.value"
+            />
 
-          <label for="avg_amount_transaction">
-            Average transaction amount </label
-          ><br />
-          <input
-            id="avg_amount_transaction"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
-          <label for="time"> Time Span (in years) </label><br />
-          <input
-            id="time"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
+            <output>2</output>
+            <label for="avg_amount_transaction">
+              Average transaction amount </label
+            ><br />
+            <input
+              id="avg_amount_transaction"
+              class="slider"
+              type="range"
+              min="1"
+              max="1000"
+              value="100"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output>100</output>
+            <label for="time"> Time Span (in years) </label><br />
+            <input
+              id="time"
+              class="slider"
+              type="range"
+              min="1"
+              max="50"
+              value="12"
+              oninput="this.nextElementSibling.value = this.value"
+            />
 
-          <label for="tau">Linearity</label><br />
-          <input
-            id="tau"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
-          <label for="defi_redistrib_period"
-            >Defi. redistribution period (in days)</label
-          ><br />
-          <input
-            id="defi_redistrib_period"
-            class="slider"
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-          />
-          <label for="fund_period"
-            >Fund period</label
-          ><br />
+            <output>12</output>
+            <label for="tau">Linearity</label><br />
+            <input
+              id="tau"
+              class="slider"
+              type="range"
+              min="1"
+              max="30"
+              value="2.5"
+              step="0.5"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output>2.5</output>
+            <label for="defi_redistrib_period"
+              >Defi. redistribution period (in days)</label
+            ><br />
+            <input
+              id="defi_redistrib_period"
+              class="slider"
+              type="range"
+              min="1"
+              max="365"
+              value="92"
+              oninput="this.nextElementSibling.value = this.value"
+            />
+            <output>92</output>
+            <br>
+            <button onclick="query()" id="submit">Simulate</button>
+          </div>
+          <div id="result" class="right"></div>
+          <!-- <label for="fund_period">Fund period</label><br />
           <input
             id="fund_period"
             class="slider"
             type="range"
             min="1"
-            max="100"
-            value="50"
-          />
+            max="10"
+            value="6"
+          /> -->
         </div>
         <hr />
-        <button onclick="query()" id="submit">Simulate</button>
-        <div id="result"></div>
       </div>
 
       <!-- End page content -->
